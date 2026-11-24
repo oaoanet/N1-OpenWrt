@@ -7,6 +7,12 @@
 [luci-app-passwall](https://github.com/Openwrt-Passwall/openwrt-passwall)：传统代理工具。内存占用稍低、简单易用。<br>
 [luci-app-podman](https://github.com/Zerogiven-OpenWRT-Packages/luci-app-podman)：容器管理
 ***
+# 默认配置
+* 管理地址：`192.168.10.10`（网关 `192.168.10.1`）
+* 账户：`root`，密码：`password`
+* 首次使用建议全新刷写
+* 已移除 luci-app-samba4，如需网络共享请自行安装
+***
 # 致谢
 本项目基于 [ImmortalWrt-25.12](https://github.com/immortalwrt/immortalwrt/tree/openwrt-25.12) 源码编译，使用 ophub 的[脚本](https://github.com/ophub/amlogic-s9xxx-openwrt)和 flippy 的[内核](https://github.com/ophub/kernel/releases/tag/kernel_flippy)打包成完整固件，感谢开发者们的无私分享。<br>
 flippy 固件的更多细节参考[恩山论坛帖子](https://www.right.com.cn/forum/thread-4076037-1-1.html)。
