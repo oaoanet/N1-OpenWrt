@@ -6,10 +6,12 @@ git clone https://github.com/ophub/luci-app-amlogic --single-branch --depth=1 cl
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall --depth=1 clone/passwall
 git clone https://github.com/vernesong/OpenClash --single-branch --branch master --depth=1 clone/openclash
 git clone https://github.com/Zerogiven-OpenWRT-Packages/luci-app-podman --single-branch --depth=1 feeds/luci/applications/luci-app-podman
+git clone https://github.com/jerrykuku/luci-theme-argon --single-branch --branch master --depth=1 clone/argon
 
 # Adjust packages
-rm -rf feeds/luci/applications/luci-app-dae feeds/luci/applications/luci-app-passwall feeds/luci/applications/luci-app-openclash feeds/packages/net/dae
+rm -rf feeds/luci/applications/luci-app-dae feeds/luci/applications/luci-app-passwall feeds/luci/applications/luci-app-openclash feeds/luci/themes/luci-theme-argon feeds/packages/net/dae
 cp -rf clone/amlogic/luci-app-amlogic clone/daepkg/luci-app-dae clone/passwall/luci-app-passwall clone/openclash/luci-app-openclash feeds/luci/applications/
+cp -rf clone/argon feeds/luci/themes/luci-theme-argon
 cp -rf clone/daepkg/luci-lib-daeuniverse feeds/luci/libs/
 cp -rf clone/daepkg/dae clone/daepkg/vmlinux-btf-builtin feeds/packages/net/
 DAE_VER=$(grep -m1 '^PKG_VERSION:=' feeds/packages/net/dae/Makefile | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
