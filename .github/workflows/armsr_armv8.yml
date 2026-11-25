@@ -69,6 +69,19 @@ jobs:
           builder_name: nantayo
           openwrt_files: armsr/armv8/N1/files
 
+      - name: Rename firmware to amlogic_n1_s905d
+        run: |
+          cd ${{ env.PACKAGED_OUTPUTPATH }}
+          for f in *.img.gz; do
+            case "$f" in
+              *amlogic_n1_s905d*) continue ;;
+              *amlogic_s905d*) new="${f/amlogic_s905d/amlogic_n1_s905d}" ;;
+              *) new="${f/_s905d/_amlogic_n1_s905d}" ;;
+            esac
+            mv -v "$f" "$new"
+          done
+          ls -l
+
       - name: Upload firmware to release
         run: |
           tag="OpenWrt_${{ env.FILE_DATE }}"
